@@ -1,38 +1,11 @@
 <a name="readme-top"></a>
 
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-OPTIONAL SECTIONS:
-- FAQ
-
-After you're finished please remove all the comments and instructions!
--->
-
 <div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
  
-  <h3><b>School Library</b></h3>
+  <h1><b>School Library</b></h1>
 
 </div>
 
-<!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
@@ -86,65 +59,35 @@ To get a local copy up and running, follow these steps.
 ### Prerequisites
 
 In order to run this project you need:
-<ul>
-    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
-  </ul>
-  
-<!--
-Example command:
 
-```sh
- gem install rails
-```
- -->
+1. Code editor.
+2. Git.
+3. [Ruby](https://www.ruby-lang.org/en/)
 
 ### Setup
 
-Clone this repository to your desired folder:
-<ul>
-<li>cd my-folder</li>
-<li>git clone https://github.com/Luiscarlosvd/school-library.git</li>
-</ul>
-
-<!--
-Example commands:
+In order to clone this repository to your desired folder, run the commands below on your console:
 
 ```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+    cd my_folder
+    git clone https://github.com/Luiscarlosvd/school-library.git
 ```
---->
 
 ### Install
 
 Install this project with:
-<ul>
-<li>bundle install</li>
-</ul>
-
-<!--
-Example command:
 
 ```sh
-  cd my-project
-  gem install
+  bundle install
 ```
---->
 
 ### Usage
 
 To run the project, execute the following command:
-<ul>
-<li>ruby list.rb</li>
-</ul>
-
-<!--
-Example command:
 
 ```sh
-  rails server
+  ruby person.rb
 ```
---->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -192,7 +135,7 @@ If you like this project give this repo a star and reach out on our social media
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank the Microverse team for their invaluable resources
+I would like to thank Microverse for giving me the opportunity to learn and grow as a developer and also I like to thank my family, they are all my support. 🌟
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
