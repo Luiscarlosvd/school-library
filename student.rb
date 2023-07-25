@@ -8,7 +8,15 @@ class Student < Person
     @classroom = classroom
   end
 
+  def classroom=(classroom)
+    @classroom = classroom
+    classroom.students.push(self) unless classroom.students.include?(self)
+  end
+
   def play_hooky
     ' ¯\\(ツ)/¯ '
   end
 end
+
+student2 = Student.new('physic', 28, 'nony')
+puts student2.inspect
