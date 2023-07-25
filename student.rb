@@ -17,6 +17,3 @@ class Student < Person
     ' ¯\\(ツ)/¯ '
   end
 end
-
-student2 = Student.new('physic', 28, 'nony')
-puts student2.inspect
