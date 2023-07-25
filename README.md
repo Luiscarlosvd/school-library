@@ -45,8 +45,9 @@ School Library app that allows user to add new students or teachers, add new boo
 ### Key Features <a name="key-features"></a>
 
 - Create person class.
-- Create student subclass.
+- Create student and classroom classes.
 - Create teacher class.
+- Create book and rental classes
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
