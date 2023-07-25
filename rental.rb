@@ -1,8 +1,5 @@
-require './book'
-require './person'
-
 class Rental
-  attr_accessor :date
+  attr_accessor :date, :book, :person
 
   def initialize(date, book, person)
     @date = date
@@ -14,8 +11,3 @@ class Rental
     person.rentals << self
   end
 end
-
-person1 = Person.new(22, 'maximilianus')
-book1 = Book.new('lola', 'mento')
-rental = Rental.new('10/02/23', book1, person1)
-puts rental.inspect
