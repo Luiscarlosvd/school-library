@@ -19,6 +19,14 @@ class App
     end
   end
 
+  def list_all_people
+    if @people.empty?
+        puts 'No people found'
+    else
+        @people.each { |person| puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
+    end
+  end
+
   def create_book
     print 'Title: '
     title = gets.chomp.capitalize
@@ -32,4 +40,4 @@ class App
 end
 
 newapp = App.new
-puts newapp.create_book
+puts newapp.list_all_people
