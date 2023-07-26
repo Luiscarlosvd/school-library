@@ -15,7 +15,7 @@ class App
     if @books.empty?
       puts 'No books found'
     else
-      @books.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
+      puts @books.map { |book| "Title: #{book.title}, Author: #{book.author}" }.join("\n")
     end
   end
 
@@ -23,7 +23,9 @@ class App
     if @people.empty?
       puts 'No people found'
     else
-      @people.each { |person| puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
+      puts @people.map { |person|
+             "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+           }.join("\n")
     end
   end
 
@@ -79,4 +81,4 @@ class App
 end
 
 newapp = App.new
-puts newapp.create_person
+puts newapp.list_all_books
