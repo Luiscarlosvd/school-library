@@ -13,8 +13,6 @@ class App
   end
 
   def list_all_books
-    @books << Book.new('luis', 'carls')
-    @books << Book.new('luis', 'valerass')
     if @books.empty?
       puts 'No books found'
     else
@@ -24,8 +22,6 @@ class App
   end
 
   def list_all_people
-    @people << Student.new('Math', 89, true, 'carls')
-    @people << Student.new('Math', 89, true, 'cdddarls')
     if @people.empty?
       puts 'No people found'
     else
@@ -115,8 +111,3 @@ class App
     puts
   end
 end
-
-newapp = App.new
-
-puts newapp.create_rental
-puts newapp.list_rentals_by_id
