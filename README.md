@@ -88,7 +88,7 @@ Install this project with:
 To run the project, execute the following command:
 
 ```sh
-  ruby person.rb
+  ruby main.rb
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
