@@ -13,23 +13,25 @@ class App
   end
 
   def list_all_books
-    @books << Book.new("luis", "carls")
-    @books << Book.new("luis", "valerass")
+    @books << Book.new('luis', 'carls')
+    @books << Book.new('luis', 'valerass')
     if @books.empty?
       puts 'No books found'
     else
-      @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}"}
+      @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
       puts
     end
   end
 
   def list_all_people
-    @people << Student.new("Math", 89, true, "carls")
-    @people << Student.new("Math", 89, true, "cdddarls")
+    @people << Student.new('Math', 89, true, 'carls')
+    @people << Student.new('Math', 89, true, 'cdddarls')
     if @people.empty?
       puts 'No people found'
     else
-      @people.each_with_index { |person, index| puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"}
+      @people.each_with_index do |person, index|
+        puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      end
       puts
     end
   end
@@ -85,23 +87,36 @@ class App
   end
 
   def create_rental
-    puts "Select a book from the following list by number: "
+    puts 'Select a book from the following list by number: '
     list_all_books
     number_book = gets.chomp.to_i
     book = @books[number_book]
     puts
-    puts "Select a person from the following list by number: "
+    puts 'Select a person from the following list by number: '
     list_all_people
     number_person = gets.chomp.to_i
     person = @people[number_person]
     puts
-    print "Date: "
+    print 'Date: '
     date = gets.chomp.to_s
     new_rental = Rental.new(date, book, person)
     @rentals << new_rental
-    print "Rental created successfully"
+    print 'Rental created successfully'
+  end
+
+  def list_rentals_by_id
+    print 'ID of person: '
+    id_person = gets.chomp.to_i
+    person_to_find = @people.find { |person| person.id == id_person }
+    puts 'Rentals: '
+    person_to_find.rentals.each do |rental|
+      puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
+    end
+    puts
   end
 end
 
 newapp = App.new
+
 puts newapp.create_rental
+puts newapp.list_rentals_by_id
