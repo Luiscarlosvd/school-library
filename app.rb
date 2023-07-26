@@ -1,6 +1,7 @@
 require './book'
 require './student'
 require './teacher'
+require './rental'
 
 class App
   attr_accessor :books, :people, :rentals
@@ -12,20 +13,24 @@ class App
   end
 
   def list_all_books
+    @books << Book.new("luis", "carls")
+    @books << Book.new("luis", "valerass")
     if @books.empty?
       puts 'No books found'
     else
-      puts @books.map { |book| "Title: #{book.title}, Author: #{book.author}" }.join("\n")
+      @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}"}
+      puts
     end
   end
 
   def list_all_people
+    @people << Student.new("Math", 89, true, "carls")
+    @people << Student.new("Math", 89, true, "cdddarls")
     if @people.empty?
       puts 'No people found'
     else
-      puts @people.map { |person|
-             "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-           }.join("\n")
+      @people.each_with_index { |person, index| puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"}
+      puts
     end
   end
 
@@ -78,7 +83,25 @@ class App
     @books << newbook
     puts 'Book created successfully'
   end
+
+  def create_rental
+    puts "Select a book from the following list by number: "
+    list_all_books
+    number_book = gets.chomp.to_i
+    book = @books[number_book]
+    puts
+    puts "Select a person from the following list by number: "
+    list_all_people
+    number_person = gets.chomp.to_i
+    person = @people[number_person]
+    puts
+    print "Date: "
+    date = gets.chomp.to_s
+    new_rental = Rental.new(date, book, person)
+    @rentals << new_rental
+    print "Rental created successfully"
+  end
 end
 
 newapp = App.new
-puts newapp.list_all_books
+puts newapp.create_rental
