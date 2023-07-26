@@ -5,7 +5,7 @@ require './rental'
 require './book'
 
 class Person < Nameable
-  attr_reader :id
+  attr_reader :id, :parent_permission
   attr_accessor :name, :age, :rentals
 
   def initialize(age, name = 'Unknown', parent_permission: true)
@@ -36,7 +36,7 @@ class Person < Nameable
   end
 end
 
-person = Person.new(22, 'maximilianus')
+person = Person.new(22, 'maximilianus', parent_permission: false)
 book = Book.new('loma', 'yano')
 person.add_rental(book, '02/03/23')
 puts person.rentals

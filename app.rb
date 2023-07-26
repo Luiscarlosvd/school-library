@@ -21,48 +21,49 @@ class App
 
   def list_all_people
     if @people.empty?
-        puts 'No people found'
+      puts 'No people found'
     else
-        @people.each { |person| puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
+      @people.each { |person| puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
     end
   end
 
   def create_person
-    print "Do you want to create a student (1) or a teacher (2)? [Input the number]: "
+    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     person_number = gets.chomp.to_i
     case person_number
     when 1
-        create_student
+      create_student
     when 2
-        create_teacher
+      create_teacher
     else
-        puts "Not valid number"
+      puts 'Not valid number'
     end
   end
 
   def create_student
-    print "Age: "
+    print 'Age: '
     age = gets.chomp.to_i
-    print "Name: "
-    name = gets.chomp
-    print "Classroom: "
+    print 'Name: '
+    name = gets.chomp.capitalize
+    print 'Classroom: '
     classroom = gets.chomp.capitalize
-    print "Has parent permission? [Y/N]: "
-    parent_permission = gets.chomp.upcase
-    if parent_permission === "Y"
-        parent_permission = true
-    elsif parent_permission === "N"
-        parent_permission = false
-    else
-        return puts "Not valid permission answer"
-    end
-    newStudent = Student.new(classroom, age, name, parent_permission)
-    @people << newStudent
-    puts "Person created successfully"
+    print 'Has parent permission? [Y/N]: '
+    parent_permission = gets.chomp.upcase == 'Y'
+    new_student = Student.new(classroom, age, parent_permission, name)
+    @people << new_student
+    puts 'Person created successfully'
   end
 
   def create_teacher
-    puts "creating a teacher"
+    print 'Age: '
+    age = gets.chomp.to_i
+    print 'Name: '
+    name = gets.chomp.capitalize
+    print 'Specialization: '
+    specialization = gets.chomp.capitalize
+    new_teacher = Teacher.new(specialization, age, name)
+    @people << new_teacher
+    puts 'Person created successfully'
   end
 
   def create_book
