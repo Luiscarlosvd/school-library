@@ -47,7 +47,8 @@ School Library app that allows user to add new students or teachers, add new boo
 - Create person class.
 - Create student and classroom classes.
 - Create teacher class.
-- Create book and rental classes
+- Create book and rental classes.
+- Create basic UI.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -87,7 +88,7 @@ Install this project with:
 To run the project, execute the following command:
 
 ```sh
-  ruby person.rb
+  ruby main.rb
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
