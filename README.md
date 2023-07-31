@@ -19,7 +19,7 @@
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
-  - [👥 Author ](#-author-)
+  - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
@@ -95,13 +95,20 @@ To run the project, execute the following command:
 
 <!-- AUTHORS -->
 
-## 👥 Author <a name="authors"></a>
+## 👥 Authors <a name="authors"></a>
 
 👤 **Luis Valera**
 
 - GitHub: [@Luiscarlosvd](https://github.com/Luiscarlosvd)
 - Twitter: [@Luiscarlosvd29](https://twitter.com/Luiscarlosvd29)
 - LinkedIn: [Luis Valera](https://www.linkedin.com/in/luis-valera-6a5749267/)
+
+
+👤 **Adeyemi Olusola**
+
+- GitHub: [@emarkees](https://github.com/emarkees)
+- Twitter: [@McEmarkees](https://twitter.com/McEmarkees)
+- Linkedin: [Adeyemi Olusola](https://www.linkedin.com/in/adeyemi-olusola)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
