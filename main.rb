@@ -1,4 +1,5 @@
 require './app'
+require './choice_selected'
 
 class Main
   def initialize
@@ -10,7 +11,8 @@ class Main
 
     loop do
       number_choice = list_of_options
-      choice_selected(number_choice)
+      newChoice = Choice_selected.new(number_choice, @app)
+      newChoice.choice_selected(number_choice)
     end
   end
 
@@ -27,7 +29,6 @@ class Main
     puts
     gets.chomp.to_i
   end
-
 end
 
 def main

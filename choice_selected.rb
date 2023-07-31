@@ -1,7 +1,7 @@
-
-class choice_selected
-  def initialize(number)
+class Choice_selected
+  def initialize(number, app)
     @number = number
+    @app = app
   end
 
    # rubocop:disable Metrics/CyclomaticComplexity
