@@ -11,8 +11,13 @@ class Main
 
     loop do
       number_choice = list_of_options
-      newChoice = Choice_selected.new(number_choice, @app)
-      newChoice.choice_selected(number_choice)
+      if number_choice == 7
+        puts 'Thanks for using the school library App!'
+        exit
+      else
+        new_choice = ChoiceSelected.new(@app)
+        new_choice.choice_selected(number_choice)
+      end
     end
   end
 

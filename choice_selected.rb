@@ -1,11 +1,9 @@
-class Choice_selected
-  def initialize(number, app)
-    @number = number
+class ChoiceSelected
+  def initialize(app)
     @app = app
   end
 
-   # rubocop:disable Metrics/CyclomaticComplexity
-   def choice_selected(number)
+  def choice_selected(number)
     case number
     when 1
       @app.list_all_books
@@ -19,12 +17,8 @@ class Choice_selected
       @app.create_rental
     when 6
       @app.list_rentals_by_id
-    when 7
-      puts 'Thanks for using the school library App!'
-      exit
     else
       puts 'Invalid number: Please enter a valid number next time'
     end
-    # rubocop:enable Metrics/CyclomaticComplexity
   end
 end
