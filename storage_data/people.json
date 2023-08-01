@@ -1,0 +1,17 @@
+[
+  {
+    "id": 58881,
+    "age": 18,
+    "classname": "Student",
+    "name": "Luis valera",
+    "parent_permission": false,
+    "classroom": "Maths"
+  },
+  {
+    "id": 37767,
+    "age": 25,
+    "classname": "Teacher",
+    "name": "Adeyemi",
+    "specialization": "Maths"
+  }
+]

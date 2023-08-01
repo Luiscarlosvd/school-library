@@ -1,0 +1,22 @@
+[
+  {
+    "date": "2023/03/03",
+    "title": "Adeyemi ",
+    "author": "Luis",
+    "id": 37767,
+    "name": "Adeyemi",
+    "age": 25,
+    "classname": "Teacher",
+    "specialization": "Maths"
+  },
+  {
+    "date": "23/08/02",
+    "title": "Adeyemi ",
+    "author": "Luis",
+    "id": 58881,
+    "name": "Luis valera",
+    "age": 18,
+    "classname": "Student",
+    "classroom": "Maths"
+  }
+]

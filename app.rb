@@ -2,14 +2,16 @@ require './book'
 require './student'
 require './teacher'
 require './rental'
+require './preserve_data'
 
 class App
+  include PreserveData
   attr_accessor :books, :people, :rentals
 
   def initialize
-    @books = []
-    @people = []
-    @rentals = []
+    @books = load_books
+    @people = load_people
+    @rentals = load_rentals
   end
 
   def list_all_books
@@ -38,8 +40,10 @@ class App
     case person_number
     when 1
       create_student
+      save_people
     when 2
       create_teacher
+      save_people
     else
       puts 'Not valid number'
     end
@@ -79,6 +83,7 @@ class App
     puts title, author
     newbook = Book.new(title, author)
     @books << newbook
+    save_books
     puts 'Book created successfully'
   end
 
@@ -97,15 +102,16 @@ class App
     date = gets.chomp.to_s
     new_rental = Rental.new(date, book, person)
     @rentals << new_rental
+    save_rental
     print 'Rental created successfully'
   end
 
   def list_rentals_by_id
     print 'ID of person: '
     id_person = gets.chomp.to_i
-    person_to_find = @people.find { |person| person.id == id_person }
+    person_to_find = @rentals.select { |rental| rental.person.id == id_person }
     puts 'Rentals: '
-    person_to_find.rentals.each do |rental|
+    person_to_find.each do |rental|
       puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
     end
     puts
