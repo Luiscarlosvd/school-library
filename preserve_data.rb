@@ -1,6 +1,8 @@
 require 'json'
 require 'fileutils'
 require './book'
+require './student'
+require './teacher'
 
 module PreserveData
   def load_books
@@ -20,7 +22,17 @@ module PreserveData
     people_arr = []
     if File.exist?('./storage_data/people.json')
       people_data = File.read('./storage_data/people.json')
+      if people_data != ''
+        JSON.parse(people_data).map do |person|
+          if person['classname'] == 'Student'
+            people_arr << (Student.new(person['classroom'], person['age'], person['parent_permission'], person['name']))
+          else 
+            people_arr << (Teacher.new(person['specialization'], person['age'], person['name']))
+          end
+        end
+      end
     end
+    people_arr
   end
 
   def save_books
@@ -40,7 +52,7 @@ module PreserveData
         json_people << {age: person.age, classname: person.class.name, name: person.name, parent_permission: person.parent_permission, classroom: person.classroom}
 
       else
-        json_people << {age: person.age, classname: person.class.name, name: person.name, parent_permission: person.parent_permission, specialization: person.specialization}
+        json_people << {age: person.age, classname: person.class.name, name: person.name, specialization: person.specialization}
       end
 
     end

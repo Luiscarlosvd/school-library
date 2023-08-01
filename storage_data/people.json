@@ -10,7 +10,13 @@
     "age": 123,
     "classname": "Teacher",
     "name": "Tytra",
-    "parent_permission": true,
     "specialization": "Mech"
+  },
+  {
+    "age": 26,
+    "classname": "Student",
+    "name": "Tyron",
+    "parent_permission": false,
+    "classroom": "Bio"
   }
 ]
