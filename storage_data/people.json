@@ -1,0 +1,16 @@
+[
+  {
+    "age": 26,
+    "classname": "Student",
+    "name": "Aadsds",
+    "parent_permission": false,
+    "classroom": "Gen"
+  },
+  {
+    "age": 123,
+    "classname": "Teacher",
+    "name": "Tytra",
+    "parent_permission": true,
+    "specialization": "Mech"
+  }
+]

@@ -40,8 +40,10 @@ class App
     case person_number
     when 1
       create_student
+      save_people
     when 2
       create_teacher
+      save_people
     else
       puts 'Not valid number'
     end
