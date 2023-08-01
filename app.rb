@@ -9,7 +9,7 @@ class App
   attr_accessor :books, :people, :rentals
 
   def initialize
-    @books = []
+    @books = load_books
     @people = []
     @rentals = []
   end
