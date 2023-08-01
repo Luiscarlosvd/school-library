@@ -11,7 +11,7 @@ class App
   def initialize
     @books = load_books
     @people = load_people
-    @rentals = []
+    @rentals = load_rentals
   end
 
   def list_all_books
@@ -109,9 +109,9 @@ class App
   def list_rentals_by_id
     print 'ID of person: '
     id_person = gets.chomp.to_i
-    person_to_find = @people.find { |person| person.id == id_person }
+    person_to_find = @rentals.select { |rental| rental.person.id == id_person }
     puts 'Rentals: '
-    person_to_find.rentals.each do |rental|
+    person_to_find.each do |rental|
       puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
     end
     puts

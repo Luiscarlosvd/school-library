@@ -1,22 +1,17 @@
 [
   {
-    "age": 26,
+    "id": 58881,
+    "age": 18,
     "classname": "Student",
-    "name": "Aadsds",
+    "name": "Luis valera",
     "parent_permission": false,
-    "classroom": "Gen"
+    "classroom": "Maths"
   },
   {
-    "age": 123,
+    "id": 37767,
+    "age": 25,
     "classname": "Teacher",
-    "name": "Tytra",
-    "specialization": "Mech"
-  },
-  {
-    "age": 26,
-    "classname": "Student",
-    "name": "Tyron",
-    "parent_permission": false,
-    "classroom": "Bio"
+    "name": "Adeyemi",
+    "specialization": "Maths"
   }
 ]
