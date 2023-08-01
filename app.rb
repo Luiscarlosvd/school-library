@@ -2,8 +2,10 @@ require './book'
 require './student'
 require './teacher'
 require './rental'
+require './preserve_data'
 
 class App
+  include PreserveData
   attr_accessor :books, :people, :rentals
 
   def initialize
@@ -79,6 +81,7 @@ class App
     puts title, author
     newbook = Book.new(title, author)
     @books << newbook
+    save_books
     puts 'Book created successfully'
   end
 
