@@ -102,6 +102,7 @@ class App
     date = gets.chomp.to_s
     new_rental = Rental.new(date, book, person)
     @rentals << new_rental
+    save_rental
     print 'Rental created successfully'
   end
 

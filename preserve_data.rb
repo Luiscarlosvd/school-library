@@ -59,4 +59,27 @@ module PreserveData
     FileUtils.touch('./storage_data/people.json')
     File.write('./storage_data/people.json', JSON.pretty_generate(json_people))
   end
+
+  def save_rental
+    json_rental = []
+    rentals.each do |rental|
+      newRental = {
+        date: rental.date,
+        title: rental.book.title,
+        author: rental.book.author,
+        id: rental.person.id,
+        name: rental.person.name,
+        age: rental.person.age,
+        classname: rental.person.class.name
+      }
+      if rental.person.class.name == 'Student'
+        newRental[:classroom] = rental.person.classroom
+      else
+        newRental[:specialization] = rental.person.specialization
+      end
+      json_rental << newRental
+    end
+    FileUtils.touch('./storage_data/rentals.json')
+    File.write('./storage_data/rentals.json', JSON.pretty_generate(json_rental))
+  end
 end
