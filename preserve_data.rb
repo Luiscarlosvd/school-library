@@ -43,22 +43,22 @@ module PreserveData
   def load_rentals
     rentals_arr = []
     if File.exist?('./storage_data/rentals.json')
-        rentals_data = File.read('./storage_data/rentals.json')
-        if rentals_data != ''
-            JSON.parse(rentals_data).map do |rental|
-                if rental['classname'] == 'Student'
-                    student = Student.new(rental['classroom'], rental['age'], rental['parent_permission'], rental['name'])
-                    student.id = rental['id']
-                    book = Book.new(rental['title'], rental['author'])
-                    rentals_arr << Rental.new(rental['date'], book, student)
-                else
-                    teacher = Teacher.new(rental['specialization'], rental['age'], rental['name'])
-                    teacher.id = rental['id']
-                    book = Book.new(rental['title'], rental['author'])
-                    rentals_arr << Rental.new(rental['date'], book, teacher)
-                end
-            end
+      rentals_data = File.read('./storage_data/rentals.json')
+      if rentals_data != ''
+        JSON.parse(rentals_data).map do |rental|
+          book = Book.new(rental['title'], rental['author'])
+          if rental['classname'] == 'Student'
+            student = Student.new(rental['classroom'], rental['age'], rental['parent_permission'],
+                                  rental['name'])
+            student.id = rental['id']
+            rentals_arr << Rental.new(rental['date'], book, student)
+          else
+            teacher = Teacher.new(rental['specialization'], rental['age'], rental['name'])
+            teacher.id = rental['id']
+            rentals_arr << Rental.new(rental['date'], book, teacher)
+          end
         end
+      end
     end
     rentals_arr
   end
@@ -76,13 +76,14 @@ module PreserveData
   def save_people
     json_people = []
     people.each do |person|
-      if person.class.name == 'Student'
-        json_people << {id: person.id, age: person.age, classname: person.class.name, name: person.name, parent_permission: person.parent_permission, classroom: person.classroom}
+      json_people << if person.instance_of?(::Student)
+                       { id: person.id, age: person.age, classname: person.class.name, name: person.name,
+                         parent_permission: person.parent_permission, classroom: person.classroom }
 
-      else
-        json_people << {id: person.id, age: person.age, classname: person.class.name, name: person.name, specialization: person.specialization}
-      end
-
+                     else
+                       { id: person.id, age: person.age, classname: person.class.name, name: person.name,
+                         specialization: person.specialization }
+                     end
     end
     FileUtils.touch('./storage_data/people.json')
     File.write('./storage_data/people.json', JSON.pretty_generate(json_people))
@@ -91,7 +92,7 @@ module PreserveData
   def save_rental
     json_rental = []
     rentals.each do |rental|
-      newRental = {
+      new_rental = {
         date: rental.date,
         title: rental.book.title,
         author: rental.book.author,
@@ -100,12 +101,12 @@ module PreserveData
         age: rental.person.age,
         classname: rental.person.class.name
       }
-      if rental.person.class.name == 'Student'
-        newRental[:classroom] = rental.person.classroom
+      if rental.person.instance_of?(::Student)
+        new_rental[:classroom] = rental.person.classroom
       else
-        newRental[:specialization] = rental.person.specialization
+        new_rental[:specialization] = rental.person.specialization
       end
-      json_rental << newRental
+      json_rental << new_rental
     end
     FileUtils.touch('./storage_data/rentals.json')
     File.write('./storage_data/rentals.json', JSON.pretty_generate(json_rental))
