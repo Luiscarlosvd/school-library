@@ -19,6 +19,7 @@
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
+    - [Test](#test)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -89,6 +90,15 @@ To run the project, execute the following command:
 
 ```sh
   ruby main.rb
+```
+
+### Test
+
+To run the tests in the project, execute the following command:
+
+```sh
+  gem install rspec
+  rspec spec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

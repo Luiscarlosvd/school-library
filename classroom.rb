@@ -14,11 +14,3 @@ class Classroom
     student.classroom = self
   end
 end
-
-classroom = Classroom.new('maths')
-student = Student.new('maths', 18, 'bob')
-student1 = Student.new('maths', 19, 'luis')
-
-classroom.add_student(student1)
-classroom.add_student(student)
-puts classroom.students.inspect
