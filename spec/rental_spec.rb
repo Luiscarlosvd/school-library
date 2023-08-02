@@ -1,8 +1,8 @@
 require_relative '../rental'
 
 describe Rental do
-  context "When testing rental class method" do
-    it "Has to create a rental" do
+  context 'When testing rental class method' do
+    it 'Has to create a rental' do
       book = double('book')
       allow(book).to receive(:title) { 'Luis Carlos' }
       allow(book).to receive(:author) { 'Adeyemi' }
@@ -11,7 +11,7 @@ describe Rental do
       allow(student).to receive(:name) { 'Luis Carlos' }
       allow(student).to receive(:age) { 18 }
       allow(student).to receive(:rentals) { [] }
-      rental = Rental.new("date", book, student )
+      rental = Rental.new('date', book, student)
 
       expect(rental).to be_instance_of Rental
       expect(rental.book).to eq(book)
@@ -20,4 +20,3 @@ describe Rental do
     end
   end
 end
-      

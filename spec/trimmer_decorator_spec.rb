@@ -1,7 +1,7 @@
 require_relative '../trimmer_decorator'
 
 describe TrimmerDecorator do
-  context "When using TrimmerDecorator method" do
+  context 'When using TrimmerDecorator method' do
     let(:nameable_mock) { double('nameable_mock', correct_name: 'Luis Carlos') }
     let(:decorator) { TrimmerDecorator.new(nameable_mock) }
 
